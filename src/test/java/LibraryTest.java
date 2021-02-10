@@ -15,12 +15,12 @@ public class LibraryTest {
         book1 = new Book("Clean code", "Robert Martin", "Computing & Internet");
         book2 = new Book("Effective Java", "Joshua Bloch", "Computing & Internet");
         book3 = new Book("Idiomatic Python", "Jeff Knupp", "Computing & Internet");
-        library = new Library(10);
+        library = new Library(2);
     }
 
     @Test
     public void hasCapactiy(){
-        assertEquals(10, library.getCapacity());
+        assertEquals(2, library.getCapacity());
     }
 
     @Test
@@ -32,8 +32,23 @@ public class LibraryTest {
     public void canAddBook(){
         library.addBook(book1);
         library.addBook(book2);
-        library.addBook(book3);
-        assertEquals(3, library.getBookCount());
+        assertEquals(2, library.getBookCount());
     }
+
+    @Test
+    public void checkCapacityBeforeAdding(){
+        library.addBook(book1);
+        library.addBook(book2);
+        library.addBook(book3);
+        assertEquals(2, library.getBookCount());
+    }
+
+    @Test
+    public void checkFalseReturnAddingToFullLibrary(){
+        library.addBook(book1);
+        library.addBook(book2);
+        assertEquals(false, library.checkFreeCapacity());
+    }
+
 
 }

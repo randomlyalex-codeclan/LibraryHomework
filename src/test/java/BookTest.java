@@ -23,12 +23,12 @@ public class BookTest {
 
     @Test
     public void bookHasAuthor(){
-        assertEquals("Clean code", book1.getAuthor());
+        assertEquals("Joshua Bloch", book2.getAuthor());
     }
 
     @Test
     public void bookHasGenre(){
-        assertEquals("Clean code", book1.getGenre());
+        assertEquals("Computing & Internet", book3.getGenre());
     }
 
 

@@ -30,6 +30,11 @@ public class Library {
         else {
             System.out.println("Library Full!");
         }
-
     }
+    public Book removeBook(Book book){
+        this.collection.remove(book);
+        return book;
+    }
+
+
 }

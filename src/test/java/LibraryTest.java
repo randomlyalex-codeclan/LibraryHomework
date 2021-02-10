@@ -30,9 +30,9 @@ public class LibraryTest {
 
     @Test
     public void canAddBook(){
-        library.addBook(Book1);
-        library.addBook(Book2);
-        library.addBook(Book3);
+        library.addBook(book1);
+        library.addBook(book2);
+        library.addBook(book3);
         assertEquals(3, library.getBookCount());
     }
 

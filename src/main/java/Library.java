@@ -19,9 +19,17 @@ public class Library {
         return this.collection.size();
     }
 
-    public void addBook(Book book){
-        this.collection.add(book);
+    public boolean checkFreeCapacity() {
+        return getCapacity() > getBookCount();
     }
 
+    public void addBook(Book book){
+        if (checkFreeCapacity()) {
+            this.collection.add(book);
+        }
+        else {
+            System.out.println("Library Full!");
+        }
 
+    }
 }
